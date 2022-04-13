@@ -12,7 +12,8 @@ msg.text = document.querySelector('[name=text]').value
 
 function populateVoices() {
   voices = this.getVoices()
-  const voiceOptions = voices.map((voice) => `<option value="${voice.name}">${voice.name}</option>`
+  // console.log(voices)
+  const voiceOptions = voices.filter(voice => voice.lang === 'en-US' || voice.lang === 'en-GB' || voice.lang === 'en-AU').map((voice) => `<option value="${voice.name}">${voice.name}</option>`
   ).join("")
   voicesDropdown.innerHTML = voiceOptions
 }
