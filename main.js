@@ -17,4 +17,15 @@ function populateVoices() {
   voicesDropdown.innerHTML = voiceOptions
 }
 
+// const setVoice = () => {
+//   console.log("Changing voice")
+//   msg.voice = voices.find(voice => voice.name === this.value)
+// }
+
+function setVoice() {
+  console.log("Changing voice")
+  msg.voice = voices.find(voice => voice.name === this.value)
+}
+
 speechSynthesis.addEventListener('voiceschanged', populateVoices)
+voicesDropdown.addEventListener('change', setVoice)
