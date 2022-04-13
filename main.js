@@ -12,14 +12,12 @@ msg.text = document.querySelector('[name=text]').value
 
 function populateVoices() {
   voices = this.getVoices()
-  // console.log(voices)
   const voiceOptions = voices.filter(voice => voice.lang === 'en-US' || voice.lang === 'en-GB' || voice.lang === 'en-AU').map((voice) => `<option value="${voice.name}">${voice.name}</option>`
   ).join("")
   voicesDropdown.innerHTML = voiceOptions
 }
 
 function setVoice() {
-  console.log("Changing voice")
   msg.voice = voices.find(voice => voice.name === this.value)
   toggle()
 }
@@ -31,7 +29,6 @@ function toggle(startOver) {
 }
 
 function setOption() {
-  console.log(this.name, this.value)
   msg[this.name] = this.value
   toggle()
 }
